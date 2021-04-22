@@ -1,0 +1,15 @@
+@import "~reset-css";
+
+@import "fonts";
+* {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+  font-family: "Share Tech Mono", sans-serif;
+}

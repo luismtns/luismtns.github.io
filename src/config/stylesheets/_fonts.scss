@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("./fonts/ShareTechMono-Regular.eot");
+  src: url("./fonts/ShareTechMono-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/ShareTechMono-Regular.woff2") format("woff2"),
+    url("./fonts/ShareTechMono-Regular.woff") format("woff"),
+    url("./fonts/ShareTechMono-Regular.ttf") format("truetype"),
+    url("./fonts/ShareTechMono-Regular.svg#ShareTechMono-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("./fonts/MonumentExtended-Ultrabold.eot");
+  src: url("./fonts/MonumentExtended-Ultrabold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/MonumentExtended-Ultrabold.woff2") format("woff2"),
+    url("./fonts/MonumentExtended-Ultrabold.woff") format("woff"),
+    url("./fonts/MonumentExtended-Ultrabold.ttf") format("truetype"),
+    url("./fonts/MonumentExtended-Ultrabold.svg#MonumentExtended-Ultrabold")
+      format("svg");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("./fonts/MonumentExtended-Regular.eot");
+  src: url("./fonts/MonumentExtended-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/MonumentExtended-Regular.woff2") format("woff2"),
+    url("./fonts/MonumentExtended-Regular.woff") format("woff"),
+    url("./fonts/MonumentExtended-Regular.ttf") format("truetype"),
+    url("./fonts/MonumentExtended-Regular.svg#MonumentExtended-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

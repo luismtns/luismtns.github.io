@@ -1,0 +1,31 @@
+$mobile: '(max-width: 575.98px)';
+$mobileHorizontal: '(min-width: 576px) and (max-width: 767.98px)';
+$tablet: '(min-width: 768px) and (max-width: 991.98px)';
+$desktop: '(min-width: 992px)';
+
+@mixin respond-to($media) {
+  @media only screen and #{$media} {
+    @content;
+  }
+}
+
+@function vw($value) {
+  @return #{($value)}vw;
+}
+
+@function vh($value) {
+  @return #{($value)}vh;
+}
+
+@function px($value) {
+  @return #{($value)}px;
+}
+
+@mixin font-size($target) {
+  font-size: vw($target/4);
+
+  @include respond-to($desktop) {
+    font-size: #{$target}px;
+    font-size: rem($target);
+  }
+}

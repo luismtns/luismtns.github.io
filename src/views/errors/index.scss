@@ -1,0 +1,14 @@
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: vh(100);
+  width: vw(100);
+  h1 {
+    @include font-size(32);
+  }
+  .italic {
+    font-style: italic;
+  }
+}

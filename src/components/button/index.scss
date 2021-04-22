@@ -1,0 +1,43 @@
+.Button {
+  display: inline-block;
+
+  button {
+    @include font-size(13);
+    text-transform: uppercase;
+    font-weight: bold;
+    background: $primary;
+    color: $white;
+    border-radius: px(30);
+    border: none;
+    cursor: pointer;
+    padding: vh(3) vw(6);
+
+    @include respond-to($desktop) {
+      padding: px(18) px(35);
+    }
+  }
+
+  &__loader {
+    text-align: center;
+    padding: vh(3) vw(6);
+
+    @include respond-to($desktop) {
+      padding: px(18) px(35);
+    }
+  }
+
+  &--fluid {
+    display: block;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &--disabled {
+    button {
+      background: $secondary;
+      cursor: default;
+    }
+  }
+}
