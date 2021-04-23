@@ -1,0 +1,10 @@
+.Carousel {
+  img{
+    object-fit: cover;
+  }
+  &__prevBtn,
+  &__nextBtn{
+    @include font-size(24);
+    font-weight: 200;
+  }
+}

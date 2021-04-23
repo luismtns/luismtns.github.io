@@ -7,6 +7,7 @@ import Loader from "@components/loader/index";
 import "./index.scss";
 import Text from "../text";
 import { Container } from "react-grid-system";
+import CarouselCustom from "../carousel";
 
 const Postlist = ({ entries, isLoading }) => (
   <Container className="Postlist">
@@ -19,18 +20,7 @@ const Postlist = ({ entries, isLoading }) => (
             <ConvertHtml html={e.reblog.comment} />
 
             </Text>
-            {e.photos && (
-              e.photos.map((e, i)=>(
-                <LazyImage
-                key={i}
-                  src={e.original_size.url}
-                  alt={`${e.caption}`}
-                />
-
-              ))
-            )}
-            <br />
-            <br />
+            {e.photos && <CarouselCustom items={e.photos} />}
           </div>
         );
       })}

@@ -3,19 +3,18 @@ const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 4000;
 const cookieName = "app";
 
-const TumblrAPI = {
-  consumerKey: process.env.REACT_APP_CONSUMER_KEY,
-  consumerSecret: process.env.REACT_APP_CONSUMER_SECRET,
-  oauthToken: process.env.REACT_APP_OAUTH_TOKEN,
-  oauthTokenSecret: process.env.REACT_APP_OAUTH_TOKEN_SECRET
- }
+// const TumblrAPI = {
+//   consumerKey: process.env.REACT_APP_CONSUMER_KEY,
+//   consumerSecret: process.env.REACT_APP_CONSUMER_SECRET,
+//   oauthToken: process.env.REACT_APP_OAUTH_TOKEN,
+//   oauthTokenSecret: process.env.REACT_APP_OAUTH_TOKEN_SECRET
+//  }
 
 const config = {
   development: {
     path: "/",
     baseUrl: `http://${host}:${port}`,
     endpoint: "https://api.tumblr.com/v2/",
-    ...TumblrAPI
   },
   test: {
     path: "/",
@@ -26,7 +25,6 @@ const config = {
     path: "/",
     baseUrl: "",
     endpoint: "https://api.tumblr.com/v2/",
-    ...TumblrAPI
   },
 };
 

@@ -3,14 +3,21 @@ import axios from 'axios';
 import config from '@globalConfig/App';
 import Session from '@utils/Session';
 
+const TumblrAPI = {
+  consumerKey: process.env.REACT_APP_CONSUMER_KEY,
+  consumerSecret: process.env.REACT_APP_CONSUMER_SECRET,
+  oauthToken: process.env.REACT_APP_OAUTH_TOKEN,
+  oauthTokenSecret: process.env.REACT_APP_OAUTH_TOKEN_SECRET
+ }
+
 const instance = axios.create({
   baseURL: config.endpoint,
   auth:{
-    username:config.oauthToken,
-    password:config.oauthTokenSecret
+    username:TumblrAPI.oauthToken,
+    password:TumblrAPI.oauthTokenSecret
   },
   params: {
-    api_key: config.consumerKey
+    api_key: TumblrAPI.consumerKey
   }
 });
 
