@@ -4,10 +4,10 @@ const port = process.env.PORT || 4000;
 const cookieName = "app";
 
 const TumblrAPI = {
-  consumerKey: process.env.REACT_APP_CONSUMER_KEY || secrets.REACT_APP_CONSUMER_KEY,
-  consumerSecret: process.env.REACT_APP_CONSUMER_SECRET || secrets.REACT_APP_CONSUMER_SECRET,
-  oauthToken: process.env.REACT_APP_OAUTH_TOKEN || secrets.REACT_APP_OAUTH_TOKEN,
-  oauthTokenSecret: process.env.REACT_APP_OAUTH_TOKEN_SECRET || secrets.REACT_APP_OAUTH_TOKEN_SECRET
+  consumerKey: process.env.REACT_APP_CONSUMER_KEY,
+  consumerSecret: process.env.REACT_APP_CONSUMER_SECRET,
+  oauthToken: process.env.REACT_APP_OAUTH_TOKEN,
+  oauthTokenSecret: process.env.REACT_APP_OAUTH_TOKEN_SECRET
  }
 
 const config = {
