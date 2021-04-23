@@ -26,6 +26,7 @@ const config = {
     path: "/",
     baseUrl: "",
     endpoint: "https://api.tumblr.com/v2/",
+    ...TumblrAPI
   },
 };
 
