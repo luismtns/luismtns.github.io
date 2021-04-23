@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./index.scss";
 
-const placeHolder = "https://singlecolorimage.com/get/0c0c0c/1280x720";
 
 const LazyImage = ({ src, alt, className, style }) => {
-  const [imageSrc, setImageSrc] = useState(placeHolder);
+  const [imageSrc, setImageSrc] = useState(src);
   const [imageRef, setImageRef] = useState();
 
   const onLoad = (event) => {

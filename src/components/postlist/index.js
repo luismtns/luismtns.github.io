@@ -1,33 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ConvertHtml from "@components/convert-html/index";
-import LazyImage from "@components/lazy-image/index";
+import ConvertHtml from "../../components/convert-html/index";
+import LazyImage from "../../components/lazy-image/index";
 import Loader from "@components/loader/index";
 
 import "./index.scss";
+import Text from "../text";
+import { Container } from "react-grid-system";
 
 const Postlist = ({ entries, isLoading }) => (
-  <div className="Postlist">
+  <Container className="Postlist">
     <Loader visible={isLoading} />
     {entries &&
-      entries.map((e) => {
-        const { acf } = e;
+      entries.map((e, i) => {
         return (
-          <div key={e.id}>
-            <h1>{acf.titulo_do_projeto}</h1>
-            {acf.capa && (
-              <LazyImage
-                src={acf.capa.sizes.large}
-                alt={`Luis Bovo designer and developer - project ${acf.titulo_do_projeto}`}
-              />
+          <div key={i}>
+            <Text>
+            <ConvertHtml html={e.reblog.comment} />
+
+            </Text>
+            {e.photos && (
+              e.photos.map((e, i)=>(
+                <LazyImage
+                key={i}
+                  src={e.original_size.url}
+                  alt={`${e.caption}`}
+                />
+
+              ))
             )}
-            <ConvertHtml html={acf.conteudo} />
             <br />
             <br />
           </div>
         );
       })}
-  </div>
+  </Container>
 );
 
 Postlist.propTypes = {};

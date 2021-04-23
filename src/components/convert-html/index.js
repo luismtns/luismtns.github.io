@@ -5,7 +5,7 @@ import "./index.scss";
 
 class ConvertHtml extends React.Component {
   dangerouslySetInnerHTML(html) {
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    return <div dangerouslySetInnerHTML={{ __html: html.replaceAll("b", "strong") }} />;
   }
 
   render() {

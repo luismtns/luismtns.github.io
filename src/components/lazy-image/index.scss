@@ -1,4 +1,4 @@
-$placeholder: url("https://singlecolorimage.com/get/0c0c0c/1280x720");
+
 .LazyImage {
   display: inline-block;
   max-width: 100%;
@@ -19,6 +19,5 @@ $placeholder: url("https://singlecolorimage.com/get/0c0c0c/1280x720");
   }
   &.has-error {
     // fallback to placeholder image on error
-    content: $placeholder;
   }
 }

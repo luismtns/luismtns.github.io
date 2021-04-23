@@ -5,6 +5,13 @@ import Session from '@utils/Session';
 
 const instance = axios.create({
   baseURL: config.endpoint,
+  auth:{
+    username:config.oauthToken,
+    password:config.oauthTokenSecret
+  },
+  params: {
+    api_key: config.consumerKey
+  }
 });
 
 instance.interceptors.request.use(config => {

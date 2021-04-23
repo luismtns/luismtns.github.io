@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var Dotenv = require('dotenv-webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -40,6 +41,7 @@ module.exports = {
     publicPath: (appConfig.baseUrl + appConfig.path)
   },
   plugins: [
+    new Dotenv(),
     new UglifyJSPlugin({
       parallel: true,
       uglifyOptions: {

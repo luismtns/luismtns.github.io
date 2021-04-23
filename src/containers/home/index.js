@@ -45,7 +45,7 @@ class HomeContainer extends React.Component {
             !
           </h4>
         </TypingAnimator>
-        {/* <Postlist entries={entries} isLoading={isLoading} /> */}
+        <Postlist entries={entries} isLoading={isLoading} />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import * as types from "./PostsTypes";
-import PostsService from "./../../services/PostsService";
+import TumblrService from "../../services/TumblrService";
 
 const isLoading = () => ({
   type: types.POSTS_LOADING,
@@ -23,8 +23,8 @@ export const fetchEntries = () => async (dispatch) => {
   dispatch(isLoading());
 
   try {
-    const response = await PostsService.getPosts();
-    dispatch(pushEntries(response.data));
+    const res = await TumblrService.getPosts();
+    dispatch(pushEntries(res.data.response.posts));
   } catch (ex) {
     dispatch(error(ex));
   }

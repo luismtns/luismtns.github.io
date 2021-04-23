@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var Dotenv = require('dotenv-webpack');
 var path = require('path');
 var appConfig = require('./../App');
 var appEnv = process.env.APP_ENV || 'development';
@@ -21,6 +22,7 @@ module.exports = {
     publicPath: (appConfig.baseUrl + appConfig.path)
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,
