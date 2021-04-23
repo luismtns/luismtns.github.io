@@ -1,0 +1,30 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false 
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run-script build-prd
+        env:
+          REACT_APP_CONSUMER_KEY: ${{ secrets.REACT_APP_CONSUMER_KEY }}
+          REACT_APP_CONSUMER_SECRET: ${{ secrets.REACT_APP_CONSUMER_SECRET }}
+          REACT_APP_OAUTH_TOKEN: ${{ secrets.REACT_APP_OAUTH_TOKEN }}
+          REACT_APP_OAUTH_TOKEN_SECRET: ${{ secrets.REACT_APP_OAUTH_TOKEN_SECRET }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
