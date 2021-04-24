@@ -1,4 +1,3 @@
-
 .LazyImage {
   display: inline-block;
   max-width: 100%;
@@ -19,5 +18,8 @@
   }
   &.has-error {
     // fallback to placeholder image on error
+  }
+  &.clickable {
+    cursor: pointer;
   }
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./index.scss";
+import cn from "classnames";
 
-
-const LazyImage = ({ src, alt, className, style }) => {
+const LazyImage = ({ src, alt, className, style, onClick }) => {
   const [imageSrc, setImageSrc] = useState(src);
   const [imageRef, setImageRef] = useState();
 
@@ -56,13 +56,20 @@ const LazyImage = ({ src, alt, className, style }) => {
   }, [src, imageSrc, imageRef]);
   return (
     <img
-      className={"LazyImage ".concat(className ? className : "")}
+      className={cn(
+        "LazyImage",
+        {
+          clickable: onClick,
+        },
+        className
+      )}
       ref={setImageRef}
       src={imageSrc}
       style={style}
       alt={alt}
       draggable={false}
       onLoad={onLoad}
+      onClick={onClick}
       onError={onError}
     />
   );

@@ -1,37 +1,83 @@
 .Text {
-  h1,h2,h3,h4,h5,h6,p,span{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
     line-height: 1.5;
   }
-  h1,h2,h3,h4,h5,h6{
-    
-    font-family: 'Monument Extended', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Monument Extended", sans-serif;
+    letter-spacing: 0.03rem;
   }
-  p,span{
-    font-family: 'Roboto Mono', monospace;
+  p,
+  span {
+    font-family: "Roboto Mono", monospace;
   }
-  &.monument{
-    
-  h1,h2,h3,h4,h5,h6,p,span{
-    font-family: 'Monument Extended', sans-serif;
-  }
+  &.monument {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+      font-family: "Monument Extended", sans-serif;
+    }
   }
 
-  h1{
-    @include font-size(42)
+  h1 {
+    @include font-size(42);
   }
-  h2{
-    @include font-size(36)
+  h2 {
+    @include font-size(36);
   }
-  h3{
-    @include font-size(28)
+  h3 {
+    @include font-size(28);
   }
-  h4{
-    @include font-size(22)
+  h4 {
+    @include font-size(22);
   }
-  h5{
-    @include font-size(18)
+  h5 {
+    @include font-size(18);
   }
-  h6{
-    @include font-size(16)
+  h6 {
+    @include font-size(16);
+  }
+
+  // Link
+  a {
+    position: relative;
+    font-weight: bold;
+    color: $active;
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out, letter-spacing 0.8s ease-in-out;
+    &::before {
+      content: " ";
+      z-index: -1;
+      height: 100%;
+      width: 0%;
+      background-color: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+    &:hover {
+      color: $primary;
+      letter-spacing: 0.05rem;
+      &::before {
+        width: 100%;
+      }
+    }
   }
 }

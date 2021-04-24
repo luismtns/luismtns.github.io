@@ -1,4 +1,10 @@
 .Postlist {
-  margin-top: px(40);
-  margin-bottom: px(40);
+  margin-top: px(92);
+  margin-bottom: px(42);
+  &__item {
+    margin-bottom: px(72);
+  }
+  .CarouselCustom {
+    margin-top: px(24);
+  }
 }

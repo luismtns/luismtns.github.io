@@ -6,12 +6,10 @@ import * as actions from "@data/posts/PostsActions";
 import * as selectors from "@data/posts/PostsSelectors";
 
 import "./index.scss";
-import ConvertHtml from "@components/convert-html";
-import Loader from "@components/loader/index";
-import LazyImage from "@components/lazy-image/index";
-import Postlist from "@components/postlist/index";
-import Logo from "@components/logo";
+import Postlist from "../../components/postlist/index";
 import TypingAnimator from "../../components/typing-animator";
+import Header from "../../components/header";
+import { Container } from "react-grid-system";
 
 class HomeContainer extends React.Component {
   constructor(props) {
@@ -29,22 +27,27 @@ class HomeContainer extends React.Component {
   }
   render() {
     const { entries, isLoading } = this.props;
-    console.log(entries);
+
     return (
       <div className="HomeContainer">
-        <Logo />
-        <TypingAnimator>
-          <h1>Olá! Seja bem-vindo, sou um designer e desenvolvedor web</h1>
-          <h2>Aqui disponiblizo trabalhos mais superlativos.</h2>
-          <br />
-          <h4>
-            Se deseja iniciar um projeto,{" "}
-            <a href="mailto:luis.mtns@gmail.com" target="_blank">
-              conte-me mais sobre
-            </a>
-            !
-          </h4>
-        </TypingAnimator>
+        <Header />
+        <Container>
+          <TypingAnimator>
+            <h1>Olá! Sou um designer que também desenvolve!</h1>
+            <h4>
+              Aqui disponiblizo trabalhos de design e desenvolvimento mais
+              superlativos.
+            </h4>
+            <br />
+            <h4>
+              Se deseja iniciar um projeto,{" "}
+              <a href="mailto:luis.mtns@gmail.com" target="_blank">
+                conte-me mais sobre
+              </a>
+              !
+            </h4>
+          </TypingAnimator>
+        </Container>
         <Postlist entries={entries} isLoading={isLoading} />
       </div>
     );

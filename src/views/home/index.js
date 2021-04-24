@@ -7,7 +7,6 @@ export default class HomeView extends React.Component {
   render() {
     return (
       <div className="HomeView">
-        {/* <Logo /> */}
         <HomeContainer />
       </div>
     );

@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Typist from "react-typist";
 
 import "./index.scss";
+
+import Text from "../text/index";
+
 const cursorConfig = {
   show: false,
   blink: true,
@@ -11,8 +14,8 @@ const cursorConfig = {
   hideWhenDoneDelay: 1000,
 };
 const TypingAnimator = ({ children }) => (
-  <Typist avgTypingDelay={55} cursor={cursorConfig} className="TypingAnimator">
-    {children}
+  <Typist avgTypingDelay={65} cursor={cursorConfig} className="TypingAnimator">
+    <Text>{children}</Text>
   </Typist>
 );
 
