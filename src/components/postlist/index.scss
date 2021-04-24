@@ -3,6 +3,12 @@
   margin-bottom: px(42);
   &__item {
     margin-bottom: px(72);
+    .Text h2 {
+      transition: letter-spacing 300ms ease-in-out;
+      &:hover {
+        letter-spacing: 0.2rem;
+      }
+    }
   }
   .CarouselCustom {
     margin-top: px(24);

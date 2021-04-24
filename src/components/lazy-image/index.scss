@@ -3,6 +3,8 @@
   max-width: 100%;
   max-height: 100%;
   // Add a smooth animation on loading
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
   @keyframes loaded {
     0% {
       opacity: 0;
@@ -13,8 +15,8 @@
   }
   // I use utilitary classes instead of props to avoid style regenerating
   &.loaded:not(.has-error) {
+    opacity: 0;
     animation: loaded 300ms ease-in-out forwards;
-    opacity: 1;
   }
   &.has-error {
     // fallback to placeholder image on error

@@ -8,6 +8,15 @@
   p,
   span {
     line-height: 1.5;
+    span {
+      font-family: inherit;
+      &.primary {
+        color: $primary;
+      }
+      &.italic {
+        font-style: italic;
+      }
+    }
   }
   h1,
   h2,

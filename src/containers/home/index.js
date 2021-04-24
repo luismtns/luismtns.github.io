@@ -33,7 +33,10 @@ class HomeContainer extends React.Component {
         <Header />
         <Container>
           <TypingAnimator>
-            <h1>Olá! Sou um designer que também desenvolve!</h1>
+            <h1>
+              Olá! Sou um <span className="primary italic">designer</span> que
+              também <span className="primary italic">desenvolve</span>!
+            </h1>
             <h4>
               Aqui disponiblizo trabalhos de design e desenvolvimento mais
               superlativos.
