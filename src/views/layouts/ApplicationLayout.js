@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 import NotificationContainer from "@containers/notification";
+import BackgroundVideo from "../../components/background-video/index";
 
 export default class ApplicationLayout extends React.Component {
   render() {
@@ -12,6 +13,7 @@ export default class ApplicationLayout extends React.Component {
       <React.Fragment>
         {children}
 
+        <BackgroundVideo />
         <NotificationContainer />
       </React.Fragment>
     );
