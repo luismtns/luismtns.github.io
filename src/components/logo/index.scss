@@ -4,16 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &--static {
-    position: fixed;
-    z-index: 9000;
-    top: px(30);
-    left: 0;
-    right: 0;
-    display: block;
-    margin: 0 auto;
-    max-width: px(280);
-  }
   &--wrap {
     position: relative;
     clear: none;
@@ -23,6 +13,9 @@
     justify-content: center;
     width: 80%;
     height: 50%;
+    @include respond-to($mobile) {
+      width: 100%;
+    }
   }
   .LazyImage {
     position: absolute;
@@ -42,8 +35,11 @@
   }
   &__gengar {
     margin-left: -5%;
-    max-width: 50%;
+    max-width: 20%;
     max-height: 90%;
+    @include respond-to($desktop) {
+      max-width: 50%;
+    }
   }
   &__gengar--outlined {
     @extend .Logo__gengar;

@@ -1,10 +1,15 @@
 .Carousel {
-  img{
+  img {
     object-fit: cover;
   }
   &__prevBtn,
-  &__nextBtn{
+  &__nextBtn {
     @include font-size(24);
     font-weight: 200;
+  }
+  &.slider-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

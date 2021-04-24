@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Carousel from "nuka-carousel";
 
@@ -8,7 +8,28 @@ import Lightbox from "../lightbox";
 import "./index.scss";
 
 const CarouselCustom = ({ items }) => {
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [handleWindowResize]);
+  const handleWindowResize = useCallback((event) => {
+    setSlidesToShow(getSlidesToShow());
+  }, []);
+
+  const getSlidesToShow = () => {
+    if (!window) return;
+    if (window.innerWidth > 560) {
+      return 2;
+    } else {
+      return 1.5;
+    }
+  };
+
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
   const onClickImage = (e) => console.log(e);
   return (
     <div className="CarouselCustom">
@@ -25,6 +46,7 @@ const CarouselCustom = ({ items }) => {
         </Lightbox>
       )}
       <Carousel
+        width="100%"
         defaultControlsConfig={{
           prevButtonText: "<",
           prevButtonClassName: "Carousel__prevBtn",
@@ -32,15 +54,16 @@ const CarouselCustom = ({ items }) => {
           nextButtonClassName: "Carousel__nextBtn",
         }}
         className="Carousel"
-        slidesToShow={2}
-        heightMode="first"
+        slidesToShow={slidesToShow}
+        heightMode="max"
+        wrapAround
       >
         {items &&
           items.map((e, i) => (
             <LazyImage
               key={i}
               onClick={() => setLightboxImage(e.original_size.url)}
-              src={e.alt_sizes[2].url}
+              src={e.alt_sizes[1].url}
               alt={`${e.caption}`}
             />
           ))}

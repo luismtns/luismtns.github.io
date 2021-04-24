@@ -10,7 +10,7 @@ const Lightbox = ({ children, onClose, visible }) => (
       "Lightbox--visible": visible,
     })}
   >
-    <span onClick={onClose} class="close">
+    <span onClick={onClose} className="close">
       &times;
     </span>
     {children}
