@@ -9,10 +9,8 @@ const Lightbox = ({ children, onClose, visible }) => (
     className={cn("Lightbox", {
       "Lightbox--visible": visible,
     })}
+    onClick={onClose}
   >
-    <span onClick={onClose} className="close">
-      &times;
-    </span>
     {children}
   </div>
 );

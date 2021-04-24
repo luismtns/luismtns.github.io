@@ -30,7 +30,6 @@ const CarouselCustom = ({ items }) => {
 
   const [lightboxImage, setLightboxImage] = useState(null);
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
-  const onClickImage = (e) => console.log(e);
   return (
     <div className="CarouselCustom">
       {lightboxImage && (
@@ -55,12 +54,18 @@ const CarouselCustom = ({ items }) => {
         }}
         className="Carousel"
         slidesToShow={slidesToShow}
-        heightMode="max"
-        wrapAround
+        height={"70vh"}
+        heightMode="current"
+        autoplay={true}
+        autoplayInterval={10000}
+        cellAlign={"center"}
+        wrapAround={true}
+        dragging={true}
       >
         {items &&
           items.map((e, i) => (
             <LazyImage
+              className={"Carousel__image"}
               key={i}
               onClick={() => setLightboxImage(e.original_size.url)}
               src={e.alt_sizes[1].url}

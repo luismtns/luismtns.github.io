@@ -1,6 +1,7 @@
 .Carousel {
-  img {
+  &__image {
     object-fit: cover;
+    min-height: 70vh;
   }
   &__prevBtn,
   &__nextBtn {
