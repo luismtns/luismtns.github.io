@@ -1,13 +1,11 @@
-
-import axios from "../config/Axios"
-
-import config from '@globalConfig/App';
+import axios from "../config/Axios";
 
 export default class TumblrService {
+  static getBlogName = () => {
+    return "luisbovo";
+  };
 
-  static getBlogName = () =>'luisbovo'
-  
   static getPosts(params) {
-    return axios.get(`blog/${this.getBlogName()}/posts`, {params:params});
+    return axios.get(`blog/${this.getBlogName()}/posts`, { params: params });
   }
 }
