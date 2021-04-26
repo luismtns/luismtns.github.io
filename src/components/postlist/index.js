@@ -9,28 +9,25 @@ import "./index.scss";
 import Text from "../text";
 import { Container } from "react-grid-system";
 import CarouselCustom from "../carousel";
-import { TransitionGroup } from "react-transition-group";
 
 const Postlist = ({ entries, isLoading }) => (
   <Container className="Postlist">
     <Loader visible={isLoading} />
-    <TransitionGroup>
-      {entries &&
-        entries.map((e, i) => {
-          return (
-            <div className="Postlist__item" key={i}>
-              <Fade bottom cascade>
-                <Text>
-                  <ConvertHtml html={e.reblog.comment} />
-                </Text>
-              </Fade>
-              <Fade bottom cascade>
-                {e.photos && <CarouselCustom items={e.photos} />}
-              </Fade>
-            </div>
-          );
-        })}
-    </TransitionGroup>
+    {entries &&
+      entries.map((e, i) => {
+        return (
+          <div className="Postlist__item" key={i}>
+            <Fade bottom cascade>
+              <Text>
+                <ConvertHtml html={e.reblog.comment} />
+              </Text>
+            </Fade>
+            <Fade bottom cascade>
+              {e.photos && <CarouselCustom items={e.photos} />}
+            </Fade>
+          </div>
+        );
+      })}
   </Container>
 );
 
