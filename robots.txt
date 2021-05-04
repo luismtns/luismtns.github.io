@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.luisbovo.com.br/sitemap.xml
+Sitemap: http://www.luisbovo.com.br/sitemap.xml
