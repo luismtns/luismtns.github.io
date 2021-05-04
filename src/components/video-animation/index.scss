@@ -1,0 +1,31 @@
+.VideoAnimation {
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__video {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    &--isLoaded {
+      opacity: 1;
+    }
+  }
+  &__play {
+    user-select: none;
+    position: absolute;
+    top: auto;
+    left: auto;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-in-out;
+    &--visible {
+      opacity: 1 !important;
+    }
+  }
+}

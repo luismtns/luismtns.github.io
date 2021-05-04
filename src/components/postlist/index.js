@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ConvertHtml from "../../components/convert-html/index";
-import LazyImage from "../../components/lazy-image/index";
-import Loader from "@components/loader/index";
+import { Container } from "react-grid-system";
 import Fade from "react-reveal/Fade";
+
+import ConvertHtml from "@components/convert-html/index";
+import Loader from "@components/loader/index";
 
 import "./index.scss";
 import Text from "../text";
-import { Container } from "react-grid-system";
 import CarouselCustom from "../carousel";
+import VideoAnimation from "../video-animation/index";
 
 const Postlist = ({ entries, isLoading }) => (
   <Container className="Postlist">
@@ -22,9 +23,16 @@ const Postlist = ({ entries, isLoading }) => (
                 <ConvertHtml html={e.reblog.comment} />
               </Text>
             </Fade>
-            <Fade bottom cascade>
-              {e.photos && <CarouselCustom items={e.photos} />}
-            </Fade>
+            {e.photos && (
+              <Fade bottom cascade>
+                <CarouselCustom items={e.photos} />
+              </Fade>
+            )}
+            {e.video_url && (
+              <Fade bottom cascade>
+                <VideoAnimation poster={e.thumbnail_url} src={e.video_url} />
+              </Fade>
+            )}
           </div>
         );
       })}
