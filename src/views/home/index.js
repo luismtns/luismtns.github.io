@@ -10,35 +10,66 @@ export default class HomeView extends React.Component {
     return (
       <div className="HomeView">
         <Helmet>
-          <meta name="title" content="LUIS BOVO | Designer e Programador" />
+          {/* <!-- Primary Meta Tags --> */}
+          <title>LUIS BOVO | Designer e Desenvolvedor</title>
+          <meta name="title" content="LUIS BOVO | Designer e Desenvolvedor" />
           <meta
             name="description"
-            content="Designer que desenvolve aplicações visualmente refinadas e utilizáveis por pessoas. Aqui apresento meus projetos pessoais mais superlativos."
+            content="Designer e programador, experiência em design e programação web, com projetos em empresas como Vans, Spotify e Sprite. Crie seu site e tenha identidade visual."
           />
 
+          {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://luismtns.github.io/" />
+          <meta property="og:url" content="https://luisbovo.com.br/" />
           <meta
             property="og:title"
-            content="LUIS BOVO | Designer e Programador"
+            content="LUIS BOVO | Designer e Desenvolvedor"
           />
           <meta
             property="og:description"
-            content="Designer que desenvolve aplicações visualmente refinadas e utilizáveis por pessoas. Aqui apresento meus projetos pessoais mais superlativos."
+            content="Designer e programador, experiência em design e programação web, com projetos em empresas como Vans, Spotify e Sprite. Crie seu site e tenha identidade visual."
           />
-          <meta property="og:image" content={summaryLargeImage} />
+          <meta
+            property="og:image"
+            content="https://luisbovo.com.br/luisbovo-cover.png"
+          />
 
-          <meta property="twitter:card" content={summaryLargeImage} />
-          <meta property="twitter:url" content="https://luismtns.github.io/" />
+          {/* <!-- Twitter --> */}
+          <meta property="twitter:card" content="./luisbovo-cover.png" />
+          <meta property="twitter:url" content="https://luisbovo.com.br/" />
           <meta
             property="twitter:title"
-            content="LUIS BOVO | Designer e Programador"
+            content="LUIS BOVO | Designer e Desenvolvedor"
           />
           <meta
             property="twitter:description"
-            content="Designer que desenvolve aplicações visualmente refinadas e utilizáveis por pessoas. Aqui apresento meus projetos pessoais mais superlativos."
+            content="Designer e programador, experiência em design e programação web, com projetos em empresas como Vans, Spotify e Sprite. Crie seu site e tenha identidade visual."
           />
-          <meta property="twitter:image" content={summaryLargeImage} />
+          <meta
+            property="twitter:image"
+            content="https://luisbovo.com.br/luisbovo-cover.png"
+          />
+          {/* <!-- Meta Tags --> */}
+
+          {/* <!-- Favicon --> */}
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
         </Helmet>
         <HomeContainer />
       </div>
