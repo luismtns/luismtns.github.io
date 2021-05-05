@@ -1,9 +1,7 @@
 import React from "react";
 
 import HomeContainer from "@containers/home";
-import Logo from "@components/logo";
 import { Helmet } from "react-helmet";
-import summaryLargeImage from "./images/summary_large_image.png";
 
 export default class HomeView extends React.Component {
   render() {
