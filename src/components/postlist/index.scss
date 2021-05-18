@@ -3,17 +3,16 @@
   margin-bottom: px(42);
   &__item {
     margin-bottom: px(72);
+    border-bottom: 2px dashed $white;
+    padding-bottom: px(32);
+    .ShurikenRow {
+      margin: px(14) 0;
+    }
     .Text h2 {
-      border-top: 0.5px solid $white;
-      margin-top: px(15);
-      padding-top: px(30);
       transition: letter-spacing 300ms ease-in-out;
       &:hover {
         letter-spacing: 0.2rem;
       }
-    }
-    .ShurikenRow .Shuriken {
-      max-width: px(42);
     }
   }
   .CarouselCustom {

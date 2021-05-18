@@ -1,20 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cn from "classnames";
 
-import './index.scss';
+import "./index.scss";
+import ShurikenRow from "../shuriken/Row";
 
-const Loader = ({visible, white, small}) => (
-  visible && <div className={cn('Loader', {'Loader--white': white, 'Loader--small': small})}>
-    <div className="spinner">
-      <div className="rect1"></div>
-      <div className="rect2"></div>
-      <div className="rect3"></div>
-      <div className="rect4"></div>
-      <div className="rect5"></div>
+const Loader = ({ visible, white, small }) =>
+  visible && (
+    <div
+      className={cn("Loader", {
+        "Loader--white": white,
+        "Loader--small": small,
+      })}
+    >
+      <ShurikenRow items={1} striped rotate />
     </div>
-  </div>
-);
+  );
 
 Loader.propTypes = {};
 

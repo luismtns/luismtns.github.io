@@ -22,10 +22,10 @@ const Postlist = ({ entries, isLoading }) => (
             <Row>
               <Col xs={12} md={4} push={{ md: i % 2 !== 0 ? 8 : 0 }}>
                 <Fade bottom cascade>
+                  <ShurikenRow items={7} striped rotate />
                   <Text>
                     <ConvertHtml html={e.reblog.comment} />
                   </Text>
-                  <ShurikenRow items={7} striped rotate />
                 </Fade>
               </Col>
               <Col xs={12} md={8} pull={{ md: i % 2 !== 0 ? 4 : 0 }}>
