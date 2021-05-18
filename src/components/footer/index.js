@@ -31,7 +31,7 @@ const Footer = () => (
     <Container>
       <ShurikenRow items={20} striped rotate={true} />
       <Row align="center">
-        <Col md={4}>
+        <Col md={3}>
           <Logo />
         </Col>
         <Col md={6}>
@@ -51,7 +51,7 @@ const Footer = () => (
             </h6>
           </Text>
         </Col>
-        <Col md={2}>
+        <Col md={3}>
           <div className="Footer__Social">
             {socialLinks.map((e) => (
               <SocialIcon key={e.type} type={e.type} url={e.url} />
@@ -60,6 +60,7 @@ const Footer = () => (
           </div>
         </Col>
       </Row>
+      <ShurikenRow items={20} rotate />
       <Row>
         <Col xs={12}>
           <Text className="Footer__disclaimer">
@@ -67,13 +68,11 @@ const Footer = () => (
               Todo o conteúdo é protegido por seus respectivos direitos autorais
               e outras leis de proteção.
             </p>
-            <p>Todos os direitos reservados.</p>
+            <br />
+            <p>© Todos os direitos reservados.</p>
           </Text>
         </Col>
       </Row>
-      <div className="Footer__shurikens">
-        <ShurikenRow items={20} rotate />
-      </div>
     </Container>
   </div>
 );
