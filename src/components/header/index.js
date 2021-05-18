@@ -8,26 +8,10 @@ import Logo from "../logo";
 import "./index.scss";
 
 const Header = () => {
-  const [hideOnScroll, setHideOnScroll] = useState(true);
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      const isShow = currPos.y > (window.innerHeight / 2) * -1;
-      if (isShow !== hideOnScroll) setHideOnScroll(isShow);
-    },
-    [hideOnScroll]
-  );
   return (
-    <div
-      className={cn("Header", {
-        fixed: !hideOnScroll,
-      })}
-    >
-      <div
-        className={cn("Header__container", {
-          fixed: !hideOnScroll,
-        })}
-      >
-        <Logo motion={hideOnScroll} />
+    <div className={cn("Header")}>
+      <div className={cn("Header__container")}>
+        <Logo motion />
       </div>
     </div>
   );

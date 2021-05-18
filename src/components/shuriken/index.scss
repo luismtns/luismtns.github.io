@@ -1,0 +1,15 @@
+.Shuriken {
+  &.rotate {
+    will-change: auto;
+    animation: itemRotate 4s infinite cubic-bezier(0.75, -0.47, 0.21, 1.48);
+  }
+}
+
+@keyframes itemRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

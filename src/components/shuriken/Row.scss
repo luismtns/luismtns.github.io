@@ -1,0 +1,9 @@
+.ShurikenRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: px(42) 0;
+  .Shuriken {
+    max-width: px(72);
+  }
+}

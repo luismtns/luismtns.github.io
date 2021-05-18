@@ -1,3 +1,7 @@
 .HomeContainer {
-
+  &__TypingCol {
+    .Typist {
+      min-height: px(150);
+    }
+  }
 }
