@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "http://luismtns.github.io/",
+  "homepage": "https://luisbovo.com.br/",
   "scripts": {
     "build": "rm -rf build && NODE_ENV=production APP_ENV=production ./node_modules/.bin/webpack -p",
     "deploy": "gh-pages -d build",
