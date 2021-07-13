@@ -9,6 +9,7 @@ const ShurikenRow = ({ items, className, striped, rotate }) => (
   <div className={cn("ShurikenRow", className)}>
     {Array.from(Array(items).keys()).map((e, i) => (
       <Shuriken
+        key={i}
         rotate={rotate}
         delay={i * 120}
         type={striped ? "striped" : ""}
