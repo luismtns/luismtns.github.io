@@ -8,6 +8,7 @@ import imgPlayButton from "./images/play-button.png";
 import LazyImage from "../lazy-image/index";
 
 const VideoAnimation = ({ src, timePause = 0, poster }) => {
+  const [canPlay, setCanPlay] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [OnPlayed, setOnPlayed] = useState(false);
   const showHidePlay = () => {
@@ -34,7 +35,7 @@ const VideoAnimation = ({ src, timePause = 0, poster }) => {
         onClick={onVideoClick}
         onPlay={showHidePlay}
         onPause={showHidePlay}
-        onLoadedMetadata={() => setIsLoaded(true)}
+        onCanPlay={() => setIsLoaded(true)}
         onEnded={onEndVideo}
         className={cn("VideoAnimation__video", {
           "VideoAnimation__video--isLoaded": isLoaded,

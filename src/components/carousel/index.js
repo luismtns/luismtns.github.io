@@ -22,9 +22,9 @@ const CarouselCustom = ({ items }) => {
   const getSlidesToShow = () => {
     if (!window) return;
     if (window.innerWidth > 560) {
-      return 2;
+      return 1.2;
     } else {
-      return 1.5;
+      return 1.2;
     }
   };
 

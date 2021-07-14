@@ -22,3 +22,20 @@
     margin: px(30) 0;
   }
 }
+
+.blurIn {
+  -webkit-animation-name: blurIn;
+  animation-name: blurIn;
+  animation-timing-function: ease-in;
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(1rem);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}

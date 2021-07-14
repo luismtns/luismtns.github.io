@@ -62,6 +62,9 @@
   h6 {
     @include font-size(16);
   }
+  p {
+    @include font-size(16);
+  }
 
   // Link
   a {

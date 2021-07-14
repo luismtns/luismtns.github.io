@@ -21,7 +21,7 @@ const LazyImage = ({ src, alt, className, style, onClick }) => {
         className
       )}
       src={src}
-      style={{ ...style, opacity: isLoaded ? 1 : 0 }}
+      style={{ opacity: isLoaded ? 1 : 0, ...style }}
       alt={alt}
       draggable={false}
       onLoad={onLoad}
