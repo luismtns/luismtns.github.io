@@ -20,16 +20,16 @@ const Postlist = ({ entries, isLoading }) => (
       entries.map((e, i) => {
         return (
           <div className="Postlist__item" key={i}>
-            <Row>
-              <Col xs={12} md={5} push={{ md: i % 2 !== 0 ? 7 : 0 }}>
+            <Row align="center">
+              <Col xs={12} md={4} push={{ md: i % 2 !== 0 ? 8 : 0 }}>
                 <Reveal effect={"blurIn"}>
-                  <ShurikenRow items={7} striped rotate />
+                  <ShurikenRow items={6} striped rotate />
                   <Text>
                     <ConvertHtml html={e.reblog.comment} />
                   </Text>
                 </Reveal>
               </Col>
-              <Col xs={12} md={7} pull={{ md: i % 2 !== 0 ? 5 : 0 }}>
+              <Col xs={12} md={8} pull={{ md: i % 2 !== 0 ? 4 : 0 }}>
                 {e.photos && (
                   <Reveal effect={"blurIn"}>
                     <CarouselCustom items={e.photos} />

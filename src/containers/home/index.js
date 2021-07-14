@@ -38,8 +38,10 @@ class HomeContainer extends React.Component {
             <Col xs={12} className="HomeContainer__TypingCol">
               <TypingAnimator>
                 <h1>
-                  Olá! Sou um <span className="primary italic">designer</span>{" "}
-                  que também <span className="primary italic">desenvolve</span>!
+                  Olá, muito prazer! Me chamo{" "}
+                  <span className="primary">Luis</span> Sou um{" "}
+                  <span className="primary italic">designer</span> que também{" "}
+                  <span className="primary italic">desenvolve</span> !
                 </h1>
                 <h4>
                   Aqui disponiblizo trabalhos de design e desenvolvimento mais

@@ -16,6 +16,7 @@ body {
   overflow: auto;
   overflow-x: hidden;
   max-width: 100%;
+  @include customScrollBar();
 }
 img {
   display: inline-block;

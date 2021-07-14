@@ -33,8 +33,8 @@
     position: absolute;
     mix-blend-mode: difference;
     z-index: 1;
-    right: px(15);
-    bottom: px(15);
+    right: px(20);
+    bottom: px(20);
     color: $white;
     @include font-size(38);
     opacity: 0.6;
@@ -47,6 +47,9 @@
       @include font-size(62);
       right: 10%;
       bottom: 5%;
+      @include respond-to($mobile) {
+        bottom: 25%;
+      }
     }
   }
   &--expanded {
@@ -56,6 +59,7 @@
     left: 0;
     z-index: 9000;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
     video {
       object-fit: contain;
       width: 90%;

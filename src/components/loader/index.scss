@@ -2,4 +2,29 @@
   .ShurikenRow {
     justify-content: center;
   }
+  &--full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: vh(100);
+    width: vw(100);
+    z-index: 9999;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 300ms ease 2.7s forwards;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(2rem);
+  }
 }

@@ -4,18 +4,22 @@
   max-height: 100%;
   // Add a smooth animation on loading
   opacity: 1;
-  transition: opacity 300ms ease-in-out;
+  filter: blur(0);
+  transition: opacity 400ms ease-in-out, filter 400ms ease-in-out;
   @keyframes loaded {
     0% {
       opacity: 0;
+      filter: blur(1rem);
     }
     100% {
       opacity: 1;
+      filter: blur(0);
     }
   }
   // I use utilitary classes instead of props to avoid style regenerating
   &.loaded:not(.has-error) {
     opacity: 0;
+    filter: blur(0);
     animation: loaded 300ms ease-in-out forwards;
   }
   &.has-error {

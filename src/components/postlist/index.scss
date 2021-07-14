@@ -8,10 +8,17 @@
     .ShurikenRow {
       margin: px(14) 0;
     }
-    .Text h2 {
-      transition: letter-spacing 300ms ease-in-out;
-      &:hover {
-        letter-spacing: 0.2rem;
+    .Text {
+      p {
+        margin-bottom: px(15);
+        text-align: justify;
+      }
+      h2 {
+        margin-bottom: px(30);
+        transition: letter-spacing 300ms ease-in-out;
+        &:hover {
+          letter-spacing: 0.2rem;
+        }
       }
     }
   }

@@ -28,3 +28,21 @@ $desktop: "(min-width: 992px)";
     font-size: vw($target/6);
   }
 }
+
+@mixin customScrollBar() {
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 0px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $secondary;
+  }
+  &::-webkit-scrollbar-track {
+    background: $black;
+    border-radius: 0px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import { FaExpand } from "react-icons/fa";
+import { FaExpand, FaCompress } from "react-icons/fa";
 
 import "./index.scss";
 
@@ -37,12 +37,15 @@ const VideoAnimation = ({ src, timePause = 0, poster }) => {
           "VideoAnimation__play--visible": onPlayed,
         })}
       />
-      <FaExpand
+      <span
         onClick={handleExpandClick}
         className={cn("VideoAnimation__expand", {
           "VideoAnimation__expand--expanded": onExpanded,
         })}
-      />
+      >
+        {!onExpanded && <FaExpand />}
+        {onExpanded && <FaCompress />}
+      </span>
       <video
         className="videoTag"
         autoPlay
