@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   &__video {
     min-width: 100%;
     width: 100%;
@@ -26,6 +27,39 @@
     transition: opacity 0.2s ease-in-out;
     &--visible {
       opacity: 1 !important;
+    }
+  }
+  &__expand {
+    position: absolute;
+    mix-blend-mode: difference;
+    z-index: 1;
+    right: px(15);
+    bottom: px(15);
+    color: $white;
+    @include font-size(38);
+    opacity: 0.6;
+    transition: opacity 300ms ease;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    &--expanded {
+      @include font-size(62);
+      right: 10%;
+      bottom: 5%;
+    }
+  }
+  &--expanded {
+    margin: 0 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    video {
+      object-fit: contain;
+      width: 90%;
+      height: 90%;
     }
   }
 }

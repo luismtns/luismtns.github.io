@@ -14,14 +14,15 @@ const LazyVideo = ({
 }) => {
   const [canPlay, setCanPlay] = useState(false);
   return (
-    <div>
+    <div
+      className={cn("LazyVideo", className)}
+      style={{ opacity: canPlay ? 1 : 0, ...style }}
+    >
       <video
         ref={ref}
         autoPlay={true}
         loop={true}
         muted={true}
-        className={cn("LazyVideo", className)}
-        style={{ opacity: canPlay ? 1 : 0, ...style }}
         onCanPlay={() => setCanPlay(true)}
       >
         <source src={source} type="video/mp4" />
