@@ -1,0 +1,45 @@
+.ProjectShare {
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: px(30);
+  }
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: px(600);
+    margin: 0 auto px(15);
+    @include font-size(42);
+  }
+  .Btn {
+    &--Facebook {
+      color: #3b5998;
+      transition: color 300ms ease;
+      &:hover {
+        color: lighten(#3b5998, 15%);
+      }
+    }
+    &--Linkedin {
+      color: #0e76a8;
+      transition: color 300ms ease;
+      &:hover {
+        color: lighten(#0e76a8, 15%);
+      }
+    }
+    &--Pinterest {
+      color: #c8232c;
+      transition: color 300ms ease;
+      &:hover {
+        color: lighten(#c8232c, 15%);
+      }
+    }
+    &--Twitter {
+      color: #00acee;
+      transition: color 300ms ease;
+      &:hover {
+        color: lighten(#00acee, 15%);
+      }
+    }
+  }
+}

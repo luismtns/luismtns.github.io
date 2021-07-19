@@ -8,13 +8,19 @@ import Text from "../text/index";
 
 const cursorConfig = {
   show: false,
-  blink: true,
+  blink: false,
   element: "",
   hideWhenDone: false,
-  hideWhenDoneDelay: 1000,
+  hideWhenDoneDelay: 0,
 };
 const TypingAnimator = ({ children }) => (
-  <Typist avgTypingDelay={65} cursor={cursorConfig} className="TypingAnimator">
+  <Typist
+    avgTypingDelay={55}
+    stdTypingDelay={0}
+    startDelay={600}
+    cursor={cursorConfig}
+    className="TypingAnimator"
+  >
     <Text>{children}</Text>
   </Typist>
 );

@@ -1,6 +1,7 @@
 .ButtonLink {
-  @include font-size(14);
-  color: $green;
-  font-weight: bold;
-  text-decoration: underline;
+  color: $active;
+  transition: color 600ms ease;
+  &:hover {
+    color: darken($active, 50%);
+  }
 }

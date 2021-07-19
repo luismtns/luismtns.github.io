@@ -18,16 +18,15 @@ const Logo = ({ motion }) => {
   const [ClientXGengar, setClientXGengar] = useState(0);
   const [ClientYGengar, setClientYGengar] = useState(0);
 
-  let timer = null;
-  const handleMouseMove = (e) => {
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(() => {
-      setClientXGengar(Math.floor(window.innerWidth / 2 - e.clientX) * 0.05);
-      setClientYGengar(Math.floor(window.innerHeight / 5 - e.clientY) * 0.05);
-    }, 100);
-  };
-
   useEffect(() => {
+    let timer = null;
+    const handleMouseMove = (e) => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        setClientXGengar(Math.floor(window.innerWidth / 2 - e.clientX) * 0.05);
+        setClientYGengar(Math.floor(window.innerHeight / 5 - e.clientY) * 0.05);
+      }, 100);
+    };
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

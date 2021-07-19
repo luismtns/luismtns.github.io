@@ -85,7 +85,7 @@
       transition: width 0.3s ease-in-out;
     }
     &:hover {
-      color: $primary;
+      color: darken($active, 15%);
       letter-spacing: 0.05rem;
       &::before {
         width: 100%;

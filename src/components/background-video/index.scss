@@ -12,7 +12,7 @@
     transition: filter 300ms ease-out, transform 600ms ease-out;
 
     &--blur {
-      filter: blur(0.75rem);
+      filter: blur(0.25rem);
       transform: scale(1.05) translateY(-2%);
     }
   }

@@ -1,0 +1,72 @@
+.Project {
+  padding: 0 0 px(80);
+  position: relative;
+  &__Title {
+    position: relative;
+    font-weight: bold;
+    h1 {
+      @include font-size(72);
+      text-transform: uppercase;
+      text-align: center;
+      transition: letter-spacing 600ms ease-in-out;
+      &:hover {
+        letter-spacing: 0.4rem;
+      }
+    }
+    padding: px(40) 0;
+
+    &__Background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: blur(1rem);
+      opacity: 0.5;
+      .LazyImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.5);
+      }
+    }
+  }
+  &__Caption {
+    margin: px(60) 0;
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-bottom: px(30);
+      transition: letter-spacing 300ms ease-in-out;
+      &:hover {
+        letter-spacing: 0.2rem;
+      }
+    }
+    p {
+      margin-bottom: px(15);
+    }
+  }
+  &__backBtn {
+    position: absolute;
+    top: px(30);
+    left: px(30);
+    color: $active;
+    @include font-size(28);
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
+  }
+  &__Back {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: px(30);
+    margin-top: px(30);
+    border-top: 2px dashed $white;
+    .ButtonLink {
+      text-decoration: none;
+    }
+  }
+}

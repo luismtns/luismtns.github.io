@@ -1,10 +1,14 @@
 .Postlist {
-  margin-top: px(92);
-  margin-bottom: px(42);
+  margin-top: px(72);
+  margin-bottom: px(62);
   &__item {
     margin-bottom: px(72);
-    border-bottom: 2px dashed $white;
     padding-bottom: px(32);
+    position: relative;
+    &__hr {
+      border: none;
+      border-bottom: 2px dashed $white;
+    }
     .ShurikenRow {
       margin: px(14) 0;
     }
@@ -20,6 +24,10 @@
           letter-spacing: 0.2rem;
         }
       }
+    }
+    &__seeMore {
+      display: inline-block;
+      margin-top: px(30);
     }
   }
   .CarouselCustom {
@@ -38,7 +46,7 @@
 
 @keyframes blurIn {
   from {
-    filter: blur(1rem);
+    filter: blur(0.25rem);
     opacity: 0;
   }
   to {

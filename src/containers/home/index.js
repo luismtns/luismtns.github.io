@@ -16,10 +16,6 @@ import ShurikenRow from "../../components/shuriken/Row";
 class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      entries: null,
-    };
   }
   componentDidMount() {
     this.props.fetchEntries();

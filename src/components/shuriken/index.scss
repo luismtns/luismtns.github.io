@@ -1,6 +1,5 @@
 .Shuriken {
   &.rotate {
-    will-change: auto;
     animation: itemRotate 4s infinite cubic-bezier(0.75, -0.47, 0.21, 1.48);
   }
 }

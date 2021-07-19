@@ -10,6 +10,9 @@ import ApplicationLayout from "@views/layouts/ApplicationLayout";
 import fakeDelay from "@utils/fakeDelay";
 
 const HomeView = React.lazy(() => fakeDelay(3 * 1000)(import("@views/home")));
+const ProjectView = React.lazy(() =>
+  fakeDelay(3 * 1000)(import("@views/project"))
+);
 const NotFoundView = React.lazy(() =>
   fakeDelay(3 * 1000)(import("@views/errors/NotFound"))
 );
@@ -25,6 +28,7 @@ export default () => {
         <Suspense fallback={<Loader visible full />}>
           <Switch>
             <Route exact path="/" component={HomeView} />
+            <Route exact path="/:projectSlug" component={ProjectView} />
             <Route path="*" component={NotFoundView} />
           </Switch>
         </Suspense>
