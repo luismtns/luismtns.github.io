@@ -38,12 +38,7 @@ module.exports = {
     publicPath: appConfig.baseUrl + appConfig.path,
   },
   plugins: [
-    new UglifyJSPlugin({
-      parallel: true,
-      uglifyOptions: {
-        ecma: 5,
-      },
-    }),
+    new UglifyJSPlugin(),
     new Dotenv(),
     new HtmlWebpackPlugin({
       chunks: ["vendor", "config", "app"],
@@ -65,6 +60,5 @@ module.exports = {
       filename: "assets/[name]-[contenthash].css",
       allChunks: true,
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
   ],
 };
