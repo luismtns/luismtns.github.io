@@ -10,8 +10,6 @@ var packageJson = require("./package.json");
 
 var vendorDependencies = Object.keys(packageJson.dependencies);
 
-var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-
 var entries = {
   vendor: vendorDependencies,
   app: __dirname + "/src/index.js",
@@ -30,7 +28,6 @@ var plugins = [
     filename: "assets/vendor-[hash].js",
     minChunks: Infinity,
   }),
-  new UglifyJSPlugin(),
 ];
 
 if (config.plugins) {
@@ -61,7 +58,7 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            query: { compact: false, presets: ["es2015"] },
+            query: { compact: false },
           },
         ],
         exclude: /node_modules/,
