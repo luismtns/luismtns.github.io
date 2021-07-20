@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var Dotenv = require("dotenv-webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var MinifyPlugin = require("babel-minify-webpack-plugin");
+var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 var appConfig = require("./../App");
 var appEnv = process.env.APP_ENV || "production";
@@ -38,7 +38,12 @@ module.exports = {
     publicPath: appConfig.baseUrl + appConfig.path,
   },
   plugins: [
-    new MinifyPlugin(),
+    new UglifyJSPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ecma: 5,
+      },
+    }),
     new Dotenv(),
     new HtmlWebpackPlugin({
       chunks: ["vendor", "config", "app"],
@@ -60,5 +65,6 @@ module.exports = {
       filename: "assets/[name]-[contenthash].css",
       allChunks: true,
     }),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
 };
