@@ -10,7 +10,6 @@ import "./index.scss";
 import Postlist from "../../components/postlist/index";
 import TypingAnimator from "../../components/typing-animator";
 import Header from "../../components/header";
-import Footer from "../../components/footer/index";
 import ShurikenRow from "../../components/shuriken/Row";
 
 class HomeContainer extends React.Component {
@@ -57,7 +56,6 @@ class HomeContainer extends React.Component {
           </Row>
         </Container>
         <Postlist entries={entries} isLoading={isLoading} />
-        <Footer />
       </div>
     );
   }

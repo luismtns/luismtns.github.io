@@ -9,7 +9,7 @@
     height: 100%;
     &.fixed {
       position: fixed;
-      z-index: 9000;
+      z-index: 5000;
       top: vh(2.5);
       right: vw(2.5);
       max-height: px(90);

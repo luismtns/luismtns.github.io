@@ -1,0 +1,15 @@
+.NoiseBackground {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  z-index: 9000;
+  width: vw(200);
+  height: vh(200);
+  background: url("./images/noise.jpg");
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+
+  @include grainEffect();
+}

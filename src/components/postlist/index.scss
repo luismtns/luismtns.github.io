@@ -3,10 +3,11 @@
   margin-bottom: px(62);
   &__item {
     margin-bottom: px(72);
-    padding-bottom: px(32);
     position: relative;
     &__hr {
       border: none;
+      margin: 0;
+      margin-top: px(32);
       border-bottom: 2px dashed $white;
     }
     .ShurikenRow {

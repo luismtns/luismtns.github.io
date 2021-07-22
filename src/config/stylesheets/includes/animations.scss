@@ -1,0 +1,25 @@
+@keyframes grain {
+  0%,
+  24%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25%,
+  49% {
+    transform: translate(-2%, -3%);
+  }
+  50%,
+  74% {
+    transform: translate(-8%, 8%);
+  }
+  75%,
+  99% {
+    transform: translate(2%, -12%);
+  }
+}
+@mixin grainEffect($time: 400) {
+  opacity: 0.125;
+  mix-blend-mode: screen;
+  animation: grain #{$time}ms infinite;
+}

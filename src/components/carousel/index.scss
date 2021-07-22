@@ -1,16 +1,17 @@
 .Carousel {
-  &__image {
-    object-fit: cover;
-    min-height: 70vh;
-  }
   &__prevBtn,
   &__nextBtn {
     @include font-size(24);
     font-weight: 200;
   }
-  &.slider-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .slider-slide {
+    .slider-list {
+      height: auto !important;
+    }
+  }
+  .slider-slide > img {
+    width: 100%;
+    display: block;
+    object-fit: cover !important;
   }
 }

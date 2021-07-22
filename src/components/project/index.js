@@ -13,14 +13,16 @@ import VideoAnimation from "../video-animation/index";
 import LazyImage from "../lazy-image";
 import ButtonLink from "../button/Link";
 import ProjectShare from "./Share";
+import LazyVideo from "../lazy-video";
 
 const Project = ({ entry }) => {
   const title = `${entry.slug && entry.slug.split("-").join(" ")}`;
-  const thumb = entry.thumbnail_url
-    ? entry.thumbnail_url
-    : entry.photos
-    ? entry.photos[0].original_size.url
-    : "";
+  const thumb =
+    entry.type == "video"
+      ? entry.video_url
+      : entry.photos
+      ? entry.photos[0].original_size.url
+      : "";
   return (
     entry && (
       <div className="Project">
@@ -31,7 +33,10 @@ const Project = ({ entry }) => {
         <Reveal effect={"blurIn"}>
           <Text className="Project__Title">
             <div className="Project__Title__Background">
-              <LazyImage src={thumb} alt={`${title}`} />
+              {entry.type != "video" && (
+                <LazyImage src={thumb} alt={`${title}`} />
+              )}
+              {entry.type == "video" && <LazyVideo source={thumb} />}
             </div>
             <h1>{title}</h1>
           </Text>
@@ -41,7 +46,7 @@ const Project = ({ entry }) => {
             <Col xs={12}>
               {entry.photos && (
                 <Reveal effect={"blurIn"}>
-                  <CarouselCustom items={entry.photos} />
+                  <CarouselCustom items={entry.photos} height="100vh" />
                 </Reveal>
               )}
               {entry.video_url && (

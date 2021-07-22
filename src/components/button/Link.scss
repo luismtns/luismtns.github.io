@@ -2,6 +2,6 @@
   color: $active;
   transition: color 600ms ease;
   &:hover {
-    color: darken($active, 50%);
+    color: lighten($active, 50%);
   }
 }

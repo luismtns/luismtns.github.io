@@ -24,6 +24,7 @@ const LazyVideo = ({
         loop={true}
         muted={true}
         onCanPlay={() => setCanPlay(true)}
+        playsInline={true}
       >
         <source src={source} type="video/mp4" />
       </video>

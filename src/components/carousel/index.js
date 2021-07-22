@@ -7,7 +7,7 @@ import Lightbox from "../lightbox";
 
 import "./index.scss";
 
-const CarouselCustom = ({ items }) => {
+const CarouselCustom = ({ items, height }) => {
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
 
@@ -54,8 +54,8 @@ const CarouselCustom = ({ items }) => {
         }}
         className="Carousel"
         slidesToShow={slidesToShow}
-        height={"70vh"}
-        heightMode="current"
+        height={height ? height : "70vh"}
+        heightMode="max"
         autoplay={true}
         autoplayInterval={10000}
         cellAlign={"center"}
@@ -66,6 +66,9 @@ const CarouselCustom = ({ items }) => {
           items.map((e, i) => (
             <LazyImage
               className={"Carousel__image"}
+              style={{
+                minHeight: height ? height : "70vh",
+              }}
               key={i}
               onClick={() => setLightboxImage(e.original_size.url)}
               src={e.alt_sizes[1].url}

@@ -8,13 +8,15 @@
     left: 0;
     height: vh(100);
     width: vw(100);
-    z-index: 9999;
+    z-index: 8000;
     background-color: $black;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeOut 300ms ease 2.7s forwards;
-    // animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: fadeOut 300ms ease 2.6s forwards;
+    @include respond-to($mobile) {
+      flex-direction: column;
+    }
   }
 }
 
