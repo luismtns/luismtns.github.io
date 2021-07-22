@@ -3,7 +3,6 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var Dotenv = require("dotenv-webpack");
 var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 var appConfig = require("./../App");
 var appEnv = process.env.APP_ENV || "production";
@@ -38,7 +37,7 @@ module.exports = {
     publicPath: appConfig.baseUrl + appConfig.path,
   },
   plugins: [
-    new UglifyJSPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
     new Dotenv(),
     new HtmlWebpackPlugin({
       chunks: ["vendor", "config", "app"],
@@ -58,6 +57,7 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: "assets/[name]-[contenthash].css",
+      disable: true,
       allChunks: true,
     }),
   ],

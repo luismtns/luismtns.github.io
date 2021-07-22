@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import cn from "classnames";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import PropTypes from "prop-types";
 
 import Logo from "../logo";
