@@ -21,7 +21,6 @@ const Postlist = ({ entries, isLoading }) => {
       {entries &&
         entries.map((e, i) => {
           const postUrl = `/${encodeURI(e.slug)}`;
-          console.log(postUrl);
           return (
             <div className="Postlist__item" key={i}>
               <Row align="center">

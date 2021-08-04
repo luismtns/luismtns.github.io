@@ -43,6 +43,9 @@ module.exports = {
   entry: entries,
   output: config.output,
   context: path.resolve(__dirname, "src"),
+  node: {
+    fs: "empty",
+  },
   devServer: {
     inline: true,
     hot: true,

@@ -9,12 +9,12 @@ import ScrollToTop from "./ScrollToTop";
 import ApplicationLayout from "@views/layouts/ApplicationLayout";
 import fakeDelay from "@utils/fakeDelay";
 
-const HomeView = React.lazy(() => fakeDelay(3 * 1000)(import("@views/home")));
+const HomeView = React.lazy(() => fakeDelay(2 * 1000)(import("@views/home")));
 const ProjectView = React.lazy(() =>
-  fakeDelay(3 * 1000)(import("@views/project"))
+  fakeDelay(2 * 1000)(import("@views/project"))
 );
 const NotFoundView = React.lazy(() =>
-  fakeDelay(3 * 1000)(import("@views/errors/NotFound"))
+  fakeDelay(2 * 1000)(import("@views/errors/NotFound"))
 );
 
 import Loader from "@components/loader";
@@ -22,17 +22,17 @@ import Loader from "@components/loader";
 export default () => {
   return (
     <ConnectedRouter history={history}>
-      <ApplicationLayout history={history}>
-        <ScrollToTop />
+      <Suspense fallback={<Loader visible full />}>
+        <ApplicationLayout history={history}>
+          <ScrollToTop />
 
-        <Suspense fallback={<Loader visible full />}>
           <Switch>
             <Route exact path="/" component={HomeView} />
             <Route exact path="/:projectSlug" component={ProjectView} />
             <Route path="*" component={NotFoundView} />
           </Switch>
-        </Suspense>
-      </ApplicationLayout>
+        </ApplicationLayout>
+      </Suspense>
     </ConnectedRouter>
   );
 };

@@ -34,7 +34,6 @@ class ProjectContainer extends React.Component {
   render() {
     const { entries, isLoading, slug } = this.props;
     const { entry, redirect } = this.state;
-    console.log(entries, entry);
     if (redirect) {
       return <Redirect to="/error/404" />;
     }
