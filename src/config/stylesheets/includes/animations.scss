@@ -23,3 +23,19 @@
   mix-blend-mode: screen;
   animation: grain #{$time}ms infinite;
 }
+
+@keyframes blurIn {
+  from {
+    filter: blur(0.25rem);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.blurIn {
+  -webkit-animation-name: blurIn;
+  animation-name: blurIn;
+  animation-timing-function: ease-in;
+}

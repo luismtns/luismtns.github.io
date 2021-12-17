@@ -8,24 +8,7 @@ import SocialIcon from "../social-icon/index";
 import Text from "../text";
 import Shuriken from "../shuriken";
 import ShurikenRow from "../shuriken/Row";
-const socialLinks = [
-  {
-    type: "twitter",
-    url: "https://twitter.com/luismtns",
-  },
-  {
-    type: "behance",
-    url: "https://www.behance.net/luismtns",
-  },
-  {
-    type: "github",
-    url: "https://github.com/luismtns/",
-  },
-  {
-    type: "linkedin",
-    url: "https://www.linkedin.com/in/luismtns/",
-  },
-];
+import SocialIconLinks from "../social-icon/Links";
 const Footer = () => (
   <div className="Footer">
     <Container>
@@ -44,7 +27,7 @@ const Footer = () => (
             </h6>
             <br />
             <h6>
-              <i>Desenvolvimento e Motion por </i>
+              <i>Desenvolvimento e UI por </i>
               <a href={"https://luisbovo.com.br"}>
                 <strong>Luís Bovo</strong>
               </a>
@@ -52,12 +35,7 @@ const Footer = () => (
           </Text>
         </Col>
         <Col md={3}>
-          <div className="Footer__Social">
-            {socialLinks.map((e) => (
-              <SocialIcon key={e.type} type={e.type} url={e.url} />
-            ))}
-            <SocialIcon />
-          </div>
+          <SocialIconLinks />
         </Col>
       </Row>
       <ShurikenRow items={20} rotate />

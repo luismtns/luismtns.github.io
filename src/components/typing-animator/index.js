@@ -15,7 +15,7 @@ const cursorConfig = {
 };
 const TypingAnimator = ({ children }) => (
   <Typist
-    avgTypingDelay={55}
+    avgTypingDelay={50}
     stdTypingDelay={0}
     startDelay={600}
     cursor={cursorConfig}

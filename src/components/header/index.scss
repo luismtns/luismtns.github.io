@@ -2,7 +2,7 @@
   width: vw(100);
   height: vh(40);
   @include respond-to($desktop) {
-    height: vh(70);
+    height: vh(60);
   }
   &__container {
     width: 100%;
