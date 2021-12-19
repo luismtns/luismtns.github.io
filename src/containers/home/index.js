@@ -27,7 +27,7 @@ class HomeContainer extends React.Component {
   }
   render() {
     const { entries, isLoading } = this.props;
-
+    const linkBudget = "https://forms.gle/qPs5txH2SUMedVRX9";
     return (
       <div className="HomeContainer">
         <Header />
@@ -50,7 +50,7 @@ class HomeContainer extends React.Component {
                 <Col xs={12} md={7} lg={8}>
                   <Text>
                     <h4>
-                      <a href="mailto:luis.mtns@gmail.com" target="_blank">
+                      <a href={linkBudget} target="_blank">
                         Solicite um orçamento
                       </a>
                     </h4>
@@ -72,7 +72,7 @@ class HomeContainer extends React.Component {
                 <h3>
                   Ficou interessado em iniciar um projeto?
                   <br /> Conte-me o que precise,{" "}
-                  <a href="mailto:luis.mtns@gmail.com" target="_blank">
+                  <a href={linkBudget} target="_blank">
                     solicite um orçamento agora
                   </a>
                   .
