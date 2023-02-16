@@ -51,7 +51,7 @@ class HomeContainer extends React.Component {
                   <Text>
                     <h4>
                       <a href={linkBudget} target="_blank">
-                        Solicite um orçamento
+                        Vamos começar um projeto?
                       </a>
                     </h4>
                   </Text>

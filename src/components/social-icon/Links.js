@@ -23,6 +23,10 @@ const SocialIconLinks = ({ className }) => {
       type: "linkedin",
       url: "https://www.linkedin.com/in/luismtns/",
     },
+    {
+      type: "download",
+      url: "files/luis-bovo-cv.pdf",
+    },
   ];
 
   return (
