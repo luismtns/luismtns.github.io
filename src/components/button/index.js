@@ -1,24 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cn from "classnames";
 
-import Loader from '@components/loader';
+import Loader from "@components/loader";
 
-import './index.scss';
+import "./index.scss";
 
-const Button = ({children, onClick, isLoading, fluid, disabled, type}) => {
+const Button = ({
+  children,
+  onClick,
+  isLoading,
+  fluid,
+  disabled,
+  clear,
+  type,
+  className,
+}) => {
   return (
-    <div className={cn(
-      'Button',
-      {
-        'Button--fluid': fluid,
-        'Button--disabled': disabled,
-      }
-    )}>
-    {
-      isLoading ?
-        <div className="Button__loader"><Loader visible /></div>
-      :
+    <div
+      className={cn(
+        "Button",
+        {
+          "Button--fluid": fluid,
+          "Button--disabled": disabled,
+          "Button--clear": clear,
+        },
+        className
+      )}
+    >
+      {isLoading ? (
+        <div className="Button__loader">
+          <Loader visible />
+        </div>
+      ) : (
         <button
           onClick={disabled ? null : onClick}
           type={type}
@@ -26,16 +40,16 @@ const Button = ({children, onClick, isLoading, fluid, disabled, type}) => {
         >
           {children}
         </button>
-    }
+      )}
     </div>
   );
-}
+};
 
 Button.propTypes = {};
 
 Button.defaultProps = {
   disabled: false,
-  type: 'button',
+  type: "button",
 };
 
 export default Button;

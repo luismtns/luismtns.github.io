@@ -1,9 +1,8 @@
 .Layout {
   min-height: vh(100);
   &--loaded {
-    filter: blur(20rem);
-    opacity: 0;
-    animation: loaded 2s ease 1s forwards;
+    // opacity: 0;
+    // animation: loaded 2s ease 1s forwards;
   }
 }
 

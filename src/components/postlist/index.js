@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Col, Container, Row } from "react-grid-system";
+import { Col, Container, Hidden, Row, Visible } from "react-grid-system";
 import Reveal from "react-reveal/Reveal";
-import { FaEye } from "react-icons/fa";
+import { FaSearchMinus, FaSearchPlus } from "react-icons/fa";
 
 import ConvertHtml from "@components/convert-html/index";
 import Loader from "@components/loader/index";
@@ -13,8 +13,14 @@ import CarouselCustom from "../carousel";
 import VideoAnimation from "../video-animation/index";
 import ShurikenRow from "../shuriken/Row";
 import ButtonLink from "../button/Link";
+import { getParagraphs, getTitle } from "../../utils/html";
+import Button from "../button/index";
 
 const Postlist = ({ entries, isLoading }) => {
+  const [zoomVideo, setZoomVideo] = useState(-1);
+  const onClickZoom = (index) => {
+    setZoomVideo(index > -1 && index != zoomVideo ? index : -1);
+  };
   return (
     <Container className="Postlist">
       {isLoading && <Loader visible={isLoading} />}
@@ -22,25 +28,28 @@ const Postlist = ({ entries, isLoading }) => {
         entries.map((e, i) => {
           const postUrl = `/${encodeURI(e.slug)}`;
           return (
-            <div className="Postlist__item" key={i}>
+            <section className="Postlist__item" key={i}>
               <Row align="center">
-                <Col xs={12} md={5} push={{ md: i % 2 !== 0 ? 7 : 0 }}>
-                  <Reveal effect={"blurIn"}>
-                    <ShurikenRow items={6} striped rotate />
-                    <Text>
-                      <h5>
-                        <ConvertHtml html={e.summary} />
-                      </h5>
-                    </Text>
-                    <ButtonLink
+                <Col xs={12}>
+                  {getTitle(e.caption).map((h, k) => (
+                    <Reveal key={k} effect={"blurIn"}>
+                      <Text align={"center"}>
+                        <ConvertHtml html={h} />
+                      </Text>
+                    </Reveal>
+                  ))}
+                  {/* <ButtonLink
                       className="Postlist__item__seeMore"
                       to={postUrl}
                     >
                       Ver mais
-                    </ButtonLink>
-                  </Reveal>
+                    </ButtonLink> */}
                 </Col>
-                <Col xs={12} md={7} pull={{ md: i % 2 !== 0 ? 5 : 0 }}>
+                <Col
+                  xs={12}
+                  md={zoomVideo == i ? 12 : 6}
+                  offset={{ md: zoomVideo == i ? 0 : 3 }}
+                >
                   {e.photos && (
                     <Reveal effect={"blurIn"}>
                       <CarouselCustom items={e.photos} />
@@ -54,12 +63,33 @@ const Postlist = ({ entries, isLoading }) => {
                       />
                     </Reveal>
                   )}
+                  <Button
+                    onClick={() => onClickZoom(i)}
+                    clear
+                    className={"ZoomBtn"}
+                  >
+                    {zoomVideo == i ? <FaSearchMinus /> : <FaSearchPlus />}
+                  </Button>
+                </Col>
+                <Col xs={12} md={8} offset={{ md: 2 }}>
+                  {getParagraphs(e.caption).map((p, k) => (
+                    <Reveal key={k} effect={"blurIn"}>
+                      <Text>
+                        <ConvertHtml html={p} />
+                      </Text>
+                    </Reveal>
+                  ))}
                 </Col>
               </Row>
               <Reveal effect={"blurIn"}>
-                <hr className="Postlist__item__hr" />
+                <Visible xs sm>
+                  <ShurikenRow items={12} striped rotate />
+                </Visible>
+                <Hidden xs sm>
+                  <ShurikenRow items={24} striped rotate />
+                </Hidden>
               </Reveal>
-            </div>
+            </section>
           );
         })}
     </Container>

@@ -37,7 +37,7 @@ const VideoAnimation = ({ src, timePause = 0, poster }) => {
           "VideoAnimation__play--visible": onPlayed,
         })}
       />
-      <span
+      {/* <span
         onClick={handleExpandClick}
         className={cn("VideoAnimation__expand", {
           "VideoAnimation__expand--expanded": onExpanded,
@@ -45,9 +45,8 @@ const VideoAnimation = ({ src, timePause = 0, poster }) => {
       >
         {!onExpanded && <FaExpand />}
         {onExpanded && <FaCompress />}
-      </span>
+      </span> */}
       <video
-        className="videoTag"
         autoPlay
         muted
         loop
@@ -57,6 +56,7 @@ const VideoAnimation = ({ src, timePause = 0, poster }) => {
         onPause={showHidePlay}
         onCanPlay={() => setIsLoaded(true)}
         onEnded={onEndVideo}
+        playsInline={true}
         className={cn("VideoAnimation__video", {
           "VideoAnimation__video--isLoaded": isLoaded,
         })}

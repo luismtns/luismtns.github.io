@@ -40,4 +40,17 @@
       cursor: default;
     }
   }
+  &--clear {
+    button {
+      background: transparent;
+      color: $white;
+      @include font-size(28);
+      padding: px(16);
+      transition: opacity 400ms ease;
+      mix-blend-mode: difference;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 }

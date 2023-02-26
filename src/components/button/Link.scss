@@ -1,5 +1,6 @@
 .ButtonLink {
   color: $active;
+  display: inline-block;
   transition: color 600ms ease;
   &:hover {
     color: lighten($active, 50%);

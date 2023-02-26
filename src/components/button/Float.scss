@@ -1,0 +1,90 @@
+.ButtonFloat {
+  position: fixed;
+  bottom: px(20);
+  right: px(20);
+  z-index: 90;
+  color: $primary;
+  background-color: $white;
+  height: px(50);
+  min-width: px(50);
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50%;
+  transition: all 300ms ease;
+  filter: blur(0.06rem);
+  opacity: 0.9;
+  animation: floatStart 3s ease 2s forwards normal;
+
+  &__content {
+    position: absolute;
+    width: fit-content;
+    white-space: nowrap;
+    margin-right: px(16);
+    background-color: $white;
+    padding: px(12);
+    border-radius: px(4);
+    transition: all 300ms ease;
+    z-index: -1;
+    right: 0%;
+    opacity: 0;
+    filter: blur(0.5rem);
+    animation: floatTextStart 3s ease 2s forwards normal;
+  }
+  &--icon {
+    flex: 1;
+    font-size: 24px;
+  }
+  &:hover {
+    filter: blur(0);
+    opacity: 1;
+    .ButtonFloat__content {
+      filter: blur(0);
+      opacity: 1;
+      right: 100%;
+    }
+  }
+}
+
+@keyframes floatStart {
+  0% {
+    filter: blur(0.06rem);
+    opacity: 0.9;
+  }
+  25% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  75% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(0.06rem);
+    opacity: 0.9;
+  }
+}
+
+@keyframes floatTextStart {
+  0% {
+    right: 0%;
+    opacity: 0;
+    filter: blur(0.5rem);
+  }
+  25% {
+    filter: blur(0);
+    opacity: 1;
+    right: 100%;
+  }
+  75% {
+    filter: blur(0);
+    opacity: 1;
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+    opacity: 0;
+    filter: blur(0.5rem);
+  }
+}

@@ -1,14 +1,13 @@
 .Postlist {
-  margin-top: px(72);
-  margin-bottom: px(62);
+  margin: px(32) 0;
   &__item {
-    margin-bottom: px(72);
+    margin-bottom: px(32);
     position: relative;
     &__hr {
       border: none;
       margin: 0;
       margin-top: px(32);
-      border-bottom: 2px dashed $white;
+      // border-bottom: 2px dashed $white;
     }
     .ShurikenRow {
       margin: px(14) 0;
@@ -20,15 +19,25 @@
       }
       h2 {
         margin-bottom: px(30);
-        transition: letter-spacing 300ms ease-in-out;
+        transition: letter-spacing 800ms ease-in-out;
+        text-transform: uppercase;
+        font-weight: 800;
+        @include respond-to($desktop) {
+          @include font-size(48);
+        }
         &:hover {
-          letter-spacing: 0.2rem;
+          letter-spacing: 0.15rem;
         }
       }
     }
     &__seeMore {
       display: inline-block;
       margin-top: px(30);
+    }
+    .ZoomBtn {
+      position: absolute;
+      top: px(30);
+      right: px(30);
     }
   }
   .CarouselCustom {

@@ -14,6 +14,7 @@ import Header from "../../components/header";
 import ShurikenRow from "../../components/shuriken/Row";
 import SocialIconLinks from "../../components/social-icon/Links";
 import Text from "../../components/text/index";
+import ButtonFloat from "../../components/button/Float";
 
 class HomeContainer extends React.Component {
   constructor(props) {
@@ -31,6 +32,9 @@ class HomeContainer extends React.Component {
     return (
       <div className="HomeContainer">
         <Header />
+        <ButtonFloat href={linkBudget}>
+          {"Bora marcar uma call!? ;)"}
+        </ButtonFloat>
         <Container>
           <Row align="center">
             <Col xs={12} className="HomeContainer__TypingCol">
@@ -60,7 +64,7 @@ class HomeContainer extends React.Component {
                   <SocialIconLinks />
                 </Col>
               </Row>
-              <ShurikenRow items={20} rotate />
+              <ShurikenRow items={8} rotate />
             </Col>
           </Row>
         </Container>

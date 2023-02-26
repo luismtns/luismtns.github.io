@@ -30,18 +30,16 @@ const Project = ({ entry }) => {
         <ButtonLink to={"/"} className="Project__backBtn">
           <FaArrowCircleLeft />
         </ButtonLink>
-        <Reveal effect={"blurIn"}>
-          <Text className="Project__Title">
-            <div className="Project__Title__Background">
-              {entry.type != "video" && (
-                <LazyImage src={thumb} alt={`${title}`} />
-              )}
-              {entry.type == "video" && <LazyVideo source={thumb} />}
-            </div>
-            <h1>{title}</h1>
-          </Text>
-        </Reveal>
         <Container>
+          <Row>
+            <Col xs={12}>
+              <Reveal effect={"blurIn"}>
+                <Text className="Project__Caption">
+                  <ConvertHtml html={entry.caption} />
+                </Text>
+              </Reveal>
+            </Col>
+          </Row>
           <Row>
             <Col xs={12}>
               {entry.photos && (
@@ -57,28 +55,19 @@ const Project = ({ entry }) => {
                   />
                 </Reveal>
               )}
+              <Text className="Project__Back">
+                <ButtonLink to={"/"}>
+                  <h4>
+                    <FaAngleLeft /> voltar
+                  </h4>
+                </ButtonLink>
+              </Text>
             </Col>
           </Row>
-          <Row>
-            <Col xs={12}>
-              <Reveal effect={"blurIn"}>
-                <Text className="Project__Caption">
-                  <ConvertHtml html={entry.caption} />
-                </Text>
-              </Reveal>
-            </Col>
-          </Row>
-          <Reveal effect={"blurIn"}>
+          {/* <Reveal effect={"blurIn"}>
             <ProjectShare />
-          </Reveal>
+          </Reveal> */}
         </Container>
-        <Text className="Project__Back">
-          <ButtonLink to={"/"}>
-            <h4>
-              <FaAngleLeft /> voltar
-            </h4>
-          </ButtonLink>
-        </Text>
       </div>
     )
   );

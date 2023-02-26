@@ -35,7 +35,10 @@
   }
 }
 .blurIn {
+  filter: blur(0.25rem);
+  opacity: 0;
   -webkit-animation-name: blurIn;
   animation-name: blurIn;
+  animation-fill-mode: forwards;
   animation-timing-function: ease-in;
 }
