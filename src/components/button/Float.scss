@@ -30,19 +30,19 @@
     right: 0%;
     opacity: 0;
     filter: blur(0.5rem);
-    animation: floatTextStart 3s ease 2s forwards normal;
+    animation: floatTextStart 3s ease 2s 1;
   }
   &--icon {
     flex: 1;
     font-size: 24px;
   }
   &:hover {
-    filter: blur(0);
-    opacity: 1;
+    filter: blur(0) !important;
+    opacity: 1 !important;
     .ButtonFloat__content {
-      filter: blur(0);
-      opacity: 1;
-      right: 100%;
+      filter: blur(0) !important;
+      opacity: 1 !important;
+      right: 100% !important;
     }
   }
 }
