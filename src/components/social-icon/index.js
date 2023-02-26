@@ -10,13 +10,13 @@ import {
 
 import "./index.scss";
 
-const SocialIcon = ({ type, url, download }) =>
+const SocialIcon = ({ type, url, title }) =>
   type == "download" ? (
-    <a href={url} className="SocialIcon" target="_blank" download>
+    <a href={url} className="SocialIcon" target="_blank" title={title} download>
       <FaFileDownload />
     </a>
   ) : (
-    <a href={url} className="SocialIcon" target="_blank">
+    <a href={url} className="SocialIcon" target="_blank" title={title}>
       {type == "twitter" && <FaTwitter />}
       {type == "behance" && <FaBehance />}
       {type == "github" && <FaGithub />}

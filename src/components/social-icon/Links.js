@@ -8,23 +8,23 @@ import SocialIcon from ".";
 const SocialIconLinks = ({ className }) => {
   const socialLinks = [
     {
-      type: "twitter",
-      url: "https://twitter.com/luismtns",
-    },
-    {
-      type: "behance",
-      url: "https://www.behance.net/luismtns",
+      type: "linkedin",
+      url: "https://www.linkedin.com/in/luismtns/",
+      title: "LinkedIn",
     },
     {
       type: "github",
+      title: "Github",
       url: "https://github.com/luismtns/",
     },
     {
-      type: "linkedin",
-      url: "https://www.linkedin.com/in/luismtns/",
+      type: "behance",
+      title: "Behance",
+      url: "https://www.behance.net/luismtns",
     },
     {
       type: "download",
+      title: "Currículo",
       url: "files/luis-bovo-cv.pdf",
     },
   ];
@@ -32,7 +32,7 @@ const SocialIconLinks = ({ className }) => {
   return (
     <div className={cn("SocialIconLinks", className)}>
       {socialLinks.map((e) => (
-        <SocialIcon key={e.type} type={e.type} url={e.url} />
+        <SocialIcon key={e.type} type={e.type} url={e.url} title={e.title} />
       ))}
     </div>
   );
