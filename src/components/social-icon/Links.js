@@ -25,7 +25,7 @@ const SocialIconLinks = ({ className }) => {
     {
       type: "download",
       title: "Currículo",
-      url: "files/luis-bovo-cv.pdf",
+      url: "files/luis-bovo-cv-2023.pdf",
     },
   ];
 
